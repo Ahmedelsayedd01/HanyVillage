@@ -12,7 +12,7 @@ export const usePost = ({ url, login = false, type = false }) => {
        const postData = async (data, name) => {
               setLoadingPost(true);
               try {
-                     const token = auth?.user?.token || '';
+                     const token = auth?.userState?.token || '';
                      const contentType = type ? 'application/json' : 'multipart/form-data';
                      const config = !login && token
                             ? {

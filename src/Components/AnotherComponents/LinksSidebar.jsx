@@ -52,13 +52,13 @@ const LinksSidebar = () => {
        const [permission, setPermission] = useState([]);
 
        useEffect(() => {
-              const computedPermission = auth?.user?.user_positions?.roles?.map((role) => role.role) || [];
+              const computedPermission = auth?.userState?.user_positions?.roles?.map((role) => role.role) || [];
 
               setPermission(computedPermission);
 
               // Log the computed values
               console.log('Permission', computedPermission);
-       }, [auth.user?.user_positions?.roles]);
+       }, [auth?.userState?.user_positions?.roles]);
 
        /* Home */
        const [isActiveHome, setIsActiveHome] = useState(true);
@@ -1014,7 +1014,7 @@ const LinksSidebar = () => {
 
        return (
               <>
-                     {auth?.user?.user_positions?.name === 'Super Admin' ? (
+                     {auth?.userState?.user_positions?.name === 'Super Admin' ? (
                             <div className="LinksSidebar w-full flex flex-col items-center justify-start gap-y-3">
 
                                    {/* Dashboard */}

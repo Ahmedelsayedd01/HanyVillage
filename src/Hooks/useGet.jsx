@@ -15,7 +15,7 @@ export const useGet = ({ url }) => {
             const response = await axios.get(url, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
-                    'Authorization': `Bearer ${auth?.user?.token || ''}`,
+                    'Authorization': `Bearer ${auth?.userState?.token || ''}`,
                 },
             });
             if (response.status === 200) {
@@ -26,7 +26,7 @@ export const useGet = ({ url }) => {
         } finally {
             setLoading(false);
         }
-    }, [url, auth?.user?.token]);
+    }, [url, auth?.userState?.token]);
 
     useEffect(() => {
         fetchData();
