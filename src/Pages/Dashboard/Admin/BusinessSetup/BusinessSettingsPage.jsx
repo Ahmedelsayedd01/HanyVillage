@@ -358,15 +358,18 @@ const BusinessSettingsPage = () => {
     if (leftCurrency === 0 && rightCurrency === 0) {
       auth.toastError("Please enter either leftCurrency or rightCurrency");
     }
-    // -----------------------------------
-    if (maintenanceMode === 0) {
-      auth.toastError("Please enter maintenanceMode ");
-      return;
+
+    // if (maintenanceMode === 0) {
+    //   auth.toastError("Please enter maintenanceMode ");
+    //   return;
+    // }
+    if (maintenanceMode !== 0) {
+      if (allSystem === 0 && branchPanel === 0 && customerApp === 0 && webApp === 0 && deliverymanApp === 0) {
+        auth.toastError("Please select at least one system.");
+        return;
+      }
     }
 
-    if (allSystem === 0 && branchPanel === 0 && customerApp === 0 && webApp === 0 && deliverymanApp === 0) {
-      auth.toastError("Please select at least one system.");
-    }
 
 
     const updatedData = {
