@@ -83,7 +83,6 @@ const AddonsPage = ({ refetch }) => {
                             </>
                      ) : (
                             <div className='w-full flex flex-col'>
-                                   {user.token}
                                    <table className="w-full sm:min-w-0">
                                           <thead className="w-full">
                                                  <tr className="w-full border-b-2">
