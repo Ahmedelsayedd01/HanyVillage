@@ -20,7 +20,7 @@ const App = () => {
   const { refetch: refetchSong, loading: loadingSong, data: dataSong } = useGet({
     url: `${apiUrl}/admin/settings/notification_sound`,
   });
-  const { postData, loadingPost, response } = usePost({ url: `${ apiUrl }/admin/order/notification` });
+  const { postData, loadingPost, response } = usePost({ url: `${apiUrl}/admin/order/notification` });
   const ordersAll = useSelector((state) => state.ordersAll.data);
   const newOrders = useSelector((state) => state.newOrders);
   const soundNotification = useSelector((state) => state.soundNotification);

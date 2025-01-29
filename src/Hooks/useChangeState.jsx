@@ -14,7 +14,7 @@ export const useChangeState = () => {
     try {
       const config = {
         headers: {
-          'Authorization': `Bearer ${user?.token || ''}`,
+          'Authorization': `Bearer ${auth?.user?.token || ''}`,
         },
       };
 

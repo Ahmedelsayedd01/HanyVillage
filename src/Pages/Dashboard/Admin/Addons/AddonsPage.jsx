@@ -6,8 +6,10 @@ import { useDelete } from '../../../../Hooks/useDelete';
 import { StaticLoader } from '../../../../Components/Components';
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 import Warning from '../../../../Assets/Icons/AnotherIcons/WarningIcon';
+import { useSelector } from 'react-redux';
 
 const AddonsPage = ({ refetch }) => {
+       const user = useSelector(state => state.userHanyVillage);
        const apiUrl = import.meta.env.VITE_API_BASE_URL;
        const { refetch: refetchAddons, loading: loadingAddons, data: dataAddons } = useGet({
               url: `${apiUrl}/admin/addons`
@@ -81,6 +83,7 @@ const AddonsPage = ({ refetch }) => {
                             </>
                      ) : (
                             <div className='w-full flex flex-col'>
+                                   {user.token}
                                    <table className="w-full sm:min-w-0">
                                           <thead className="w-full">
                                                  <tr className="w-full border-b-2">
