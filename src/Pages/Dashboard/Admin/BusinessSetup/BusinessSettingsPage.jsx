@@ -435,7 +435,7 @@ const BusinessSettingsPage = () => {
 
     formData.append("logo", logo);
     formData.append("fav_icon", icon);
-    formData.append("time_zone", JSON.stringify(selectedTimeZone));
+    formData.append("time_zone", JSON.stringify(selectedTimeZone.name));
 
     formData.append("time_format", stateTimeFormat);
     formData.append("currency_id", currencyId);
