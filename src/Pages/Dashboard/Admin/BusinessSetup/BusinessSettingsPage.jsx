@@ -202,7 +202,7 @@ const BusinessSettingsPage = () => {
       setSelectedCountry(dataCompany?.company_info?.country || selectedCountry)
 
       setStateTimeZone(dataCompany?.company_info?.time_zone || '');
-      setSelectedTimeZone(dataCompany?.company_info?.time_zone || '');
+      setSelectedTimeZone({ name: dataCompany?.company_info?.time_zone || '' });
 
       setSelectedTimeFormat(dataCompany?.company_info?.time_format || stateTimeFormat)
       setStateTimeFormat(dataCompany?.company_info?.time_format || stateTimeFormat)
@@ -435,7 +435,7 @@ const BusinessSettingsPage = () => {
 
     formData.append("logo", logo);
     formData.append("fav_icon", icon);
-    formData.append("time_zone", JSON.stringify(selectedTimeZone.name));
+    formData.append("time_zone", JSON.stringify(selectedTimeZone?.name || ""));
 
     formData.append("time_format", stateTimeFormat);
     formData.append("currency_id", currencyId);
@@ -844,7 +844,7 @@ const BusinessSettingsPage = () => {
               onChange={(e) => setSelectedTimeZone(e.value)}
               options={timeZone}
               optionLabel="name"
-              placeholder={stateTimeZone}
+              placeholder={stateTimeZone || selectedTimeZone.name}
               filter
               className="w-full md:w-14rem"
             />

@@ -20,7 +20,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
-    e.preventDefault(); // Use uppercase "D"
+    e.preventDefault(); 
 
     if (!email) {
       auth.toastError("Please Enter The Email.");
