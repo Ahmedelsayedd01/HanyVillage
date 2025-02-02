@@ -110,23 +110,6 @@ const App = () => {
             <Navbar />
           </div>
 
-          {/* <button
-            onClick={() => {
-              if (soundNotification && soundNotification.data) {
-                const audio = new Audio(soundNotification.data); // Create a new Audio object
-                audio.play().catch((error) => {
-                  console.error('Error playing audio:', error);
-                });
-                console.log('Playing sound notification.');
-                console.log('audio', audio);
-              } else {
-                console.log('No sound notification available.');
-              }
-            }}
-          >
-            Play
-          </button> */}
-
           {/* Main Content Area */}
           <div className="relative w-full px-3 h-full overflow-y-scroll scrollPage">
             <Outlet />

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 export const useChangeState = () => {
   const auth = useAuth();
-  const user = useSelector(state => state.user)
+  const user = useSelector(state => state.userHanyVillage)
   const [loadingChange, setLoadingChange] = useState(false);
   const [responseChange, setResponseChange] = useState(null);
 

@@ -8,19 +8,19 @@ import { useDispatch } from 'react-redux'
 import { setUser } from '../../Store/CreateSlices'
 
 const LoginPage = () => {
-  
+
   const auth = useAuth();
   const dispatch = useDispatch()
   const navigate = useNavigate();
-  
+
   const apiUrl = import.meta.env.VITE_API_BASE_URL;
-  
+
   const { postData, loadingPost, response } = usePost({ url: `${apiUrl}/api/admin/auth/login` }); // Destructure as an object
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
-    e.preventDefault(); 
+    e.preventDefault(); // Use uppercase "D"
 
     if (!email) {
       auth.toastError("Please Enter The Email.");

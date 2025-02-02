@@ -6,10 +6,8 @@ import { useDelete } from '../../../../Hooks/useDelete';
 import { StaticLoader } from '../../../../Components/Components';
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 import Warning from '../../../../Assets/Icons/AnotherIcons/WarningIcon';
-import { useSelector } from 'react-redux';
 
 const AddonsPage = ({ refetch }) => {
-       const user = useSelector(state => state.userHanyVillage);
        const apiUrl = import.meta.env.VITE_API_BASE_URL;
        const { refetch: refetchAddons, loading: loadingAddons, data: dataAddons } = useGet({
               url: `${apiUrl}/admin/addons`
@@ -83,7 +81,7 @@ const AddonsPage = ({ refetch }) => {
                             </>
                      ) : (
                             <div className='w-full flex flex-col'>
-                                   <table className="w-full sm:min-w-0">
+                                   <table className="w-full sm:min-w-0 block overflow-x-scroll scrollPage">
                                           <thead className="w-full">
                                                  <tr className="w-full border-b-2">
                                                         {headers.map((name, index) => (
@@ -179,7 +177,7 @@ const AddonsPage = ({ refetch }) => {
                                           </tbody>
                                    </table>
                                    {addons.length > 0 && (
-                                          <div className="my-6 flex items-center justify-center gap-x-4">
+                                          <div className="my-6 flex flex-wrap items-center justify-center gap-x-4">
                                                  {currentPage !== 1 && (
                                                         <button type='button' className='text-lg px-4 py-2 rounded-xl bg-mainColor text-white font-TextFontMedium' onClick={() => setCurrentPage(currentPage - 1)}>Prev</button>
                                                  )}
